@@ -2,12 +2,12 @@ import {remove, render, RenderPosition} from '../framework/render.js';
 import TripEventsListView from '../view/trip-events-list-view.js';
 import TripEventsSortingView from '../view/trip-events-sorting-view.js';
 import NoPointsView from '../view/no-trip-events-view';
-import {TripEventPresenter} from './tripEvent-presenter';
+import {TripEventPresenter} from './trip-event-presenter';
 import {FilterType, SortType, UpdateType, UserAction} from '../utils/const';
 import UiBlocker from '../framework/ui-blocker/ui-blocker';
 import {filters} from '../utils/filters';
 import {sorts} from '../utils/sorts';
-import CreateTripEventPresenter from './createTripEvent-presenter';
+import CreateTripEventPresenter from './create-trip-event-presenter';
 import PreloaderView from '../view/preloader-view';
 
 const TimeLimit = {
@@ -68,7 +68,6 @@ export default class TripPresenter {
     this.#tripEvents = [...tripEventModel.tripEvents];
 
     this.#tripEventModel.addObserver(this.#handleModelEvent);
-    this.#destinationModel.addObserver(this.#handleModelEvent);
     this.#filterModel.addObserver(this.#handleModelEvent);
   }
 
